@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-const API = axios.create({baseURL:"http://localhost:4000/api/todos"})
+const API = axios.create({
+    baseURL:"https://todo-app-j7hw.onrender.com/api/todos"
+})
 
 // sare todos lane ke liye 
 
