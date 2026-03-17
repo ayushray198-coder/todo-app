@@ -18,7 +18,7 @@ const AddTodo = ({onAdd}) => {
         value={title}
         onChange={(e)=>setTitle(e.target.value)}
         placeholder='Enter new Task'
-        className='flex-1 p-3 border rounded-xl' />
+        className='className=" w-full p-3 rounded-xl bg-gray-700 text-white border border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"' />
 
         <button className='bg-blue-600 text-white px-6 rounded-xl hover:bg-blue-400 '
         onClick={handlerAdd}>Add</button>
