@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {getTodos, createTodo,deleteTodo,updateStatus,updateTodo} from "../api/todoApi.js"
 import AddTodo from '../components/AddTodos.jsx'
-import TodoItem from '../components/todoItem.jsx'
+import TodoItem from '../components/TodoItem.jsx'
 
 const todoPages = () => {
     const [todos,setTodos] = useState([])
