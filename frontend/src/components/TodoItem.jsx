@@ -12,7 +12,7 @@ const todoItem = ({todo, onDelete, onToggle, onUpdate}) => {
     }
 
   return (
-    <div className=' bg-gray-600 p-4 rounded-xl flex justify-between items-center  shadow'>
+    <div className=' bg-purple-200 p-4 rounded-xl flex justify-between items-center  shadow'>
         <div className='flex items-center gap-3'>
 
             <input type="checkbox"
@@ -40,17 +40,17 @@ const todoItem = ({todo, onDelete, onToggle, onUpdate}) => {
                 
                 {isEditing ? (
                     <button onClick={handleUpdate}
-                    className='bg-blue-500 text-white px-3 py-1 rounded '>
+                    className='bg-blue-500 text-white px-3 py-1 rounded-l-xl '>
                         save
                     </button>
                 ):(
                     <button onClick={()=> setIsEditing(true)}
-                    className='bg-yellow-500 text-white px-3 py-1 rounded '>Edit
+                    className='bg-yellow-400  text-white px-3 py-1 rounded-l-xl '>Edit
                     </button>
                 )}
 
                 <button onClick={()=> onDelete(todo._id)}
-                    className='bg-red-500 text-white px-3 py-1 rounded'>
+                    className='bg-red-500 text-white px-3 py-1 rounded-e-xl'>
                     delete
                 </button>
         </div>
