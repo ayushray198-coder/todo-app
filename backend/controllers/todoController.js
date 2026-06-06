@@ -24,12 +24,12 @@ export const getTodoByIdController = async(req,res)=>{
             req.params.id
         )
         if(!todo){
-            return res.status(404).json({message:"todo not found"})
+        tus(404).json({message:"todo not found"})
         } 
         res.json(todo)
     } catch (error) {
         res.status(500).json({message:error.message})
-    }
+    }    return res.sta
 }
 
 

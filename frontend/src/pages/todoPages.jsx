@@ -31,7 +31,7 @@ const todoPages = () => {
 
     }
 
-    
+
     useEffect(() => {
         loadTodos()
     }, [])
@@ -42,7 +42,7 @@ const todoPages = () => {
 
             setLoading(true)
             await createTodo({ title })
-            loadTodos()
+            await loadTodos()
 
         } catch {
 
@@ -61,7 +61,7 @@ const todoPages = () => {
 
             setLoading(true)
             await deleteTodo(id)
-            loadTodos()
+            await loadTodos()
         } catch {
             setError("Delete failed")
         } finally {
@@ -74,7 +74,7 @@ const todoPages = () => {
 
             setLoading(true)
             await updateTodo(id, { title })
-            loadTodos()
+            await loadTodos()
 
         } catch {
 
@@ -100,7 +100,7 @@ const todoPages = () => {
 
             await updateStatus(todo._id, newStatus)
 
-            loadTodos()
+            await loadTodos()
         } catch {
             setError("Status update failed")
 
