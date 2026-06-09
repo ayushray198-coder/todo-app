@@ -3,7 +3,7 @@ import { getTodos, createTodo, deleteTodo, updateStatus, updateTodo } from "../a
 import AddTodo from '../components/AddTodos.jsx'
 import TodoItem from '../components/TodoItem.jsx'
 
-const todoPages = () => {
+const TodoPages = () => {
     const [todos, setTodos] = useState([])
     const [search, setSearch] = useState("")
     const [loading, setLoading] = useState(false)
@@ -162,4 +162,4 @@ const todoPages = () => {
     )
 }
 
-export default todoPages
+export default TodoPages
