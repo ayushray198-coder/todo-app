@@ -29,7 +29,7 @@ export const getTodoByIdController = async (req, res) => {
         res.json(todo)
     } catch (error) {
         res.status(500).json({ message: error.message })
-    } 
+    }
 }
 
 
@@ -56,7 +56,7 @@ export const updateTodoController = async (req, res) => {
         const todo = await updateTodo(
             req.params.id,
             req.body,
-            { ReturnDocument: "after" }
+            { returnDocument: "after" }
         )
 
         if (!todo) {
