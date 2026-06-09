@@ -12,24 +12,23 @@ const TodoPages = () => {
 
     //database se todo load kene liye fn
     const loadTodos = async () => {
+  try {
+    setLoading(true)
 
-        //     
+    const res = await getTodos()
 
-        try {
-            setLoading(true)
-            setError("")
+    console.log("FULL RESPONSE =>", res)
+    console.log("DATA =>", res.data)
+    console.log("TYPE =>", typeof res.data)
+    console.log("IS ARRAY =>", Array.isArray(res.data))
 
-            const res = await getTodos()
-            setTodos(res.data)
-
-        } catch (error) {
-            setError("Failed to load Todos ")
-
-        } finally {
-            setLoading(false)
-        }
-
-    }
+    setTodos(res.data)
+  } catch (error) {
+    console.log(error)
+  } finally {
+    setLoading(false)
+  }
+}
 
 
     useEffect(() => {
@@ -113,7 +112,17 @@ const TodoPages = () => {
 
     // search filter ke liye 
 
-    const filteredTodos = todos.filter((todo) => todo.title.toLowerCase().includes(search.toLowerCase()))
+    // const filteredTodos = todos.filter((todo) => todo.title.toLowerCase().includes(search.toLowerCase()))
+
+    console.log("TODOS =>", todos)
+    console.log("IS ARRAY =>", Array.isArray(todos))
+
+    const filteredTodos = Array.isArray(todos)
+        ? todos.filter((todo) =>
+            todo.title.toLowerCase().includes(search.toLowerCase())
+        )
+        : []
+
 
     return (
         <div className='min-h-screen bg-gray-700 flex justify-center p-10'>
