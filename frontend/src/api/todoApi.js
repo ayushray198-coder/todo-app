@@ -1,8 +1,5 @@
 import axios from 'axios'
 
-import dotenv from "dotenv"
-
-dotenv.config()
 
 const API = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL
