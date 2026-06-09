@@ -3,7 +3,7 @@ import { getTodos, createTodo, deleteTodo, updateStatus, updateTodo } from "../a
 import AddTodo from '../components/AddTodos.jsx'
 import TodoItem from '../components/TodoItem.jsx'
 
-const TodoPages = () => {
+const todoPages = () => {
     const [todos, setTodos] = useState([])
     const [search, setSearch] = useState("")
     const [loading, setLoading] = useState(false)
@@ -12,23 +12,24 @@ const TodoPages = () => {
 
     //database se todo load kene liye fn
     const loadTodos = async () => {
-  try {
-    setLoading(true)
 
-    const res = await getTodos()
+        //     
 
-    console.log("FULL RESPONSE =>", res)
-    console.log("DATA =>", res.data)
-    console.log("TYPE =>", typeof res.data)
-    console.log("IS ARRAY =>", Array.isArray(res.data))
+        try {
+            setLoading(true)
+            setError("")
 
-    setTodos(res.data)
-  } catch (error) {
-    console.log(error)
-  } finally {
-    setLoading(false)
-  }
-}
+            const res = await getTodos()
+            setTodos(res.data)
+
+        } catch (error) {
+            setError("Failed to load Todos ")
+
+        } finally {
+            setLoading(false)
+        }
+
+    }
 
 
     useEffect(() => {
@@ -112,17 +113,7 @@ const TodoPages = () => {
 
     // search filter ke liye 
 
-    // const filteredTodos = todos.filter((todo) => todo.title.toLowerCase().includes(search.toLowerCase()))
-
-    console.log("TODOS =>", todos)
-    console.log("IS ARRAY =>", Array.isArray(todos))
-
-    const filteredTodos = Array.isArray(todos)
-        ? todos.filter((todo) =>
-            todo.title.toLowerCase().includes(search.toLowerCase())
-        )
-        : []
-
+    const filteredTodos = todos.filter((todo) => todo.title.toLowerCase().includes(search.toLowerCase()))
 
     return (
         <div className='min-h-screen bg-gray-700 flex justify-center p-10'>
@@ -171,4 +162,4 @@ const TodoPages = () => {
     )
 }
 
-export default TodoPages
+export default todoPages
