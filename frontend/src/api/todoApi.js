@@ -1,7 +1,11 @@
 import axios from 'axios'
 
+import dotenv from "dotenv"
+
+dotenv.config()
+
 const API = axios.create({
-    baseURL:"https://todo-app-j7hw.onrender.com/api/todos"
+    baseURL: process.env.BASE_URL
 })
 
 // sare todos lane ke liye 
