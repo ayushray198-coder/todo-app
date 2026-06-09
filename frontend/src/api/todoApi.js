@@ -5,7 +5,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 const API = axios.create({
-    baseURL: process.env.BASE_URL
+    baseURL: import.meta.env.VITE_BASE_URL
 })
 
 // sare todos lane ke liye 
