@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const API = axios.create({
-    baseURL: "https://todo-app-j7hw.onrender.com/api/todos"
+    baseURL: import.meta.env.VITE_BASE_URL
 })
 
 // sare todos lane ke liye 

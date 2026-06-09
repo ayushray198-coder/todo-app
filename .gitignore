@@ -6,4 +6,3 @@ backend/.env
 frontend/.env
 dist/
 build/
-frontend/.env
